@@ -1,5 +1,6 @@
 # SNS-app
-- [Audit Instructions](https://github.com/01-edu/public/tree/master/subjects/social-network/audit)
+
+This app was created according to the requirements of kood/Jõhvi: https://github.com/01-edu/public/tree/master/subjects/social-network
 
 ## Prequisites:
 * Node Package Manager
