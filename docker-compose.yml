@@ -13,8 +13,8 @@ services:
     networks:
       - shared-network
     volumes:
-  - ./data/database.db:/app/pkg/db/database.db
-  - ./data/assets:/app/assets
+      - ./data/database.db:/app/pkg/db/database.db
+      - ./data/assets:/app/assets
   app:
     depends_on:
       - api
