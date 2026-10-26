@@ -43,8 +43,8 @@ func NewSession(w http.ResponseWriter, username string, userID int) (string, err
 		Expires:  expiration,
 		Path:     "/",
 		HttpOnly: true,
-		Secure:   true,
-		SameSite: http.SameSiteNoneMode,
+		Secure:   false,
+		SameSite: http.SameSiteLaxMode,
 	}
 	http.SetCookie(w, &cookie)
 
