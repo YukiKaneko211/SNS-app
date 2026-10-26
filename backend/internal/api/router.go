@@ -52,7 +52,6 @@ func originAllowed(origin string) bool {
 		return false
 	}
 	allowed := map[string]bool{
-		"https://social-network-frontend-4ub2.onrender.com": true,
 		"http://92.5.159.165:3000":                          true,
 	}
 	if extra := os.Getenv("CORS_ORIGIN"); extra != "" {
