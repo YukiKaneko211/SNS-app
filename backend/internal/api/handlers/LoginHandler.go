@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	db "social-network/pkg/db/sqlite"
 )
 
@@ -58,6 +59,10 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	origin := r.Header.Get("Origin")
 	allowedOrigins := map[string]bool{
 		"https://social-network-frontend-4ub2.onrender.com": true,
+		"http://92.5.159.165:3000":                          true,
+	}
+	if extra := os.Getenv("CORS_ORIGIN"); extra != "" {
+		allowedOrigins[extra] = true
 	}
 
 	if allowedOrigins[origin] {

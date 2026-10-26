@@ -10,6 +10,7 @@ services:
       - 8080:8080
     environment:
       - FE_URL=http://app:3000
+      - CORS_ORIGIN=http://92.5.159.165:3000
     networks:
       - shared-network
     volumes:

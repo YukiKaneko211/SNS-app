@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 )
 
@@ -46,15 +47,24 @@ func (r *Router) getHandler(method, path string) http.Handler {
 	return http.NotFoundHandler()
 }
 
+func originAllowed(origin string) bool {
+	if origin == "" {
+		return false
+	}
+	allowed := map[string]bool{
+		"https://social-network-frontend-4ub2.onrender.com": true,
+		"http://92.5.159.165:3000":                          true,
+	}
+	if extra := os.Getenv("CORS_ORIGIN"); extra != "" {
+		allowed[extra] = true
+	}
+	return allowed[origin]
+}
+
 func corsHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		origin := r.Header.Get("Origin")
-		// You can customize the list of allowed origins
-		allowedOrigins := map[string]bool{
-			"https://social-network-frontend-4ub2.onrender.com": true,
-		}
-
-		if allowedOrigins[origin] {
+		if originAllowed(origin) {
 			w.Header().Set("Access-Control-Allow-Origin", origin)
 		}
 		w.Header().Set("Access-Control-Allow-Credentials", "true")
