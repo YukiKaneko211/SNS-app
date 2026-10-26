@@ -12,6 +12,9 @@ services:
       - FE_URL=http://app:3000
     networks:
       - shared-network
+    volumes:
+  - ./data/database.db:/app/pkg/db/database.db
+  - ./data/assets:/app/assets
   app:
     depends_on:
       - api
@@ -24,7 +27,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - API_URL=http://api:8080
+      - PORT=3000
     networks:
       - shared-network
 
