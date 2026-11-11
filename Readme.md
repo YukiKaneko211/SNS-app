@@ -39,3 +39,6 @@ Based on the lessons learned from this team project, I am currently re-developin
 
 - **PRD (In Progress):** [View Notion PRD](https://app.notion.com/p/PRD-SNS-App-Reloaded-39f7d3e40494804d839eee5bc1ac7f2e?source=copy_link)
 - **UI Design (In Progress):** in Penpot *(The screenshots below are part of the design)*
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/24c2704b-dae2-4501-b6d0-1d4ae4b19a38" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d1aee1a9-0836-4fc8-86e2-7c121149a4c9" />
+
