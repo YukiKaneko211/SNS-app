@@ -1,84 +1,41 @@
-# SNS-app
+# Social Network App
 
-This app was created according to the requirements of kood/Jõhvi: https://github.com/01-edu/public/tree/master/subjects/social-network
+Full-stack social network application built as a team project, according to the requirements of kood/Jõhvi: https://github.com/01-edu/public/tree/master/subjects/social-network
 
-## Prequisites:
-* Node Package Manager
-* Golang version 1.22.5 or newer.
-* Docker (Optional)
+A live demo is hosted on Oracle Cloud Infrastructure: http://92.5.159.165:3000
+> ⚠️ **Note on the Demo**
+> Some features may not work as expected because this demo is an unrefactored snapshot of our original student project, originally developed solely for local `npm run dev` environments without strict containerization. The core codebase has been intentionally left as-is, as a complete re-architecture is planned (see [Future Plan](#future-plan) below).
 
-## Instructions
-- Open the terminal and clone the repository using the following command:
-```
-git clone https://01.kood.tech/git/jvillem/social-network
-```
-- Then navigate to the root directory
-```
-cd social-network
-```
 
-## Running from source
-Open up two terminal windows and navigate to the root directory of the repository
-In one of the terminal windows navigate to the frontend directory and run the following command
-```
-npm install
-```
-After it finishes, type this command into the same terminal window
+## Tech Stack
+- **Frontend:** Next.js (TypeScript)
+- **Backend:** Go (REST API / WebSockets)
+- **Database:** SQLite
+- **Infrastructure:** Docker, Docker Compose, Nginx, OCI (Ampere A1 Flex)
 
-```
-npm run dev
-```
+## Original Project Context
+Created during a fast-paced team sprint based on the kood/Jõhvi requirements.
 
-Expected output:
-```
-xaero@XAERO-X570-F:~/koodprojects/social-network/frontend$ npm run dev
-
-> frontend@0.1.0 dev
-> next dev
-
-  ▲ Next.js 14.2.12
-  - Local:        http://localhost:3000
-
- ✓ Starting...
- ✓ Ready in 1171ms
- ```
-
-Now, leave that terminal window be and on your second terminal window navigate to the backend's cmd/api directory
-```
-cd backend/cmd/api
-```
-And then run the backend server
-```
-go run .
-```
-Expected output:
-```
-Foreign Key Status: 1
-Starting Go server
-```
-
-And then feel free to navigate to http://localhost:3000 using a web browser of your choosing.
-
-## Running via Docker
-To build the docker container run the following command:
-```docker compose build```
-To run the container run:
-```docker compose up``` 
-
-## Troubleshooting
-If you run the backend server and you encounter this error:
-```
-xaero@XAERO-X570-F:~/koodprojects/social-network/backend/cmd/api$ go run .
-Failed to enable foreign keys: Binary was compiled with 'CGO_ENABLED=0', go-sqlite3 requires cgo to work. This is a stub
-```
-Within the same terminal install build-essential via this terminal command
-```
-sudo apt install build-essential
-```
-
-## Team
+### Team
 - [@jvillem](https://01.kood.tech/git/jvillem)
 - [@mlutter](https://01.kood.tech/git/mlutter)
 - [@mpuusaag](https://01.kood.tech/git/mpuusaag)
 - [@skoppelm](https://01.kood.tech/git/skoppelm)
-- [@ykaneko](https://01.kood.tech/git/ykaneko)
+
+*(Check the contributors section for GitHub profiles where applicable)*
+
+###  Project Reflection
+
+- **Team Workflow Insights:** A tight schedule with an ad-hoc student team led to haphazard development without a structured plan or clear task distribution, resulting in architectural inconsistency and inefficient workflows.
+- **Key Takeaways:** Realized the critical necessity of team alignment, up-front planning, and careful application design before jumping into coding.
+
+### Infrastructure & Hosting Updates (2026)
+
+Originally developed as a local-only environment since deployment was not part of the kood/Jõhvi requirements. To make it publicly accessible, I containerized the frontend and backend using Docker Compose and deployed it onto an Oracle Cloud Infrastructure (OCI) ARM instance (Ubuntu 24.04).
+
+### Future plan
+
+Based on the lessons learned from this team project, I am currently re-developing this app **as a solo project leveraging AI-assisted development tools (Cursor/LLMs)**. This new iteration will feature a proper Product Requirements Document (PRD), modern UI/UX design, and a scalable serverless architecture (Vercel + Supabase). Following document and design are in progress.
+
+- **PRD (In Progress):** [View Notion PRD](https://app.notion.com/p/PRD-SNS-App-Reloaded-39f7d3e40494804d839eee5bc1ac7f2e?source=copy_link)
+- **UI Design (In Progress):** in Penpot *(The screenshots below are part of the design)*
